@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cica</title>
+    <style>
+        body{
+            background-color:rgb(117, 211, 248);
+            color:azure
+        }
+        </style>
+
+
+</head>
+<body>
+   <h1>kék</h1>
+   <p>dsvsrsw</p>
+   <img scr="cicakep"> <br>
+   <video>
+    <form action= "beszur.php" method="post">
+    <h2>Név:</h2>
+    <imput type="text" name="nev" size="50">
+    <h2>üzenet:</h2>
+    <textarea name="uzenet" rows="10" cds="50">Itt üzenj!</textera><br>
+     <imput type="submit" value="Elküld">
+     </form>
+     <?php
+     $kapcsolat=mysqli_connect("localhost","root","","beszedes");
+     $eredmeny=mysqli_query($kaocsolat,"SEECT*FROM uzenet WHERE aktiv='igen'");
+     echo"<d>";
+     while ($sor=mysqli_fetch_array($eredmeny))
+     {
+         echo"<li>".$sor["nev"]."---".$sor["uzenet"];
+     }
+     mysqli_close($kapcsolat);
+     ?>
+
+
+
+</body>
+</html>
